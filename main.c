@@ -9,8 +9,8 @@ int main()
     int roommateCount;
     char roommateNames[MAX_ROOMMATES][20];
     float expenses[MAX_ROOMMATES][MAX_EXPENSES];
-    int expenseCounts[MAX_ROOMMATES];
-    float totals[MAX_ROOMMATES];
+    int expenseCounts[MAX_ROOMMATES] = {0};
+    float totals[MAX_ROOMMATES] = {0};
 
     printf("Enter number of roommates (max %d): ", MAX_ROOMMATES);
     scanf("%d", &roommateCount);
@@ -18,7 +18,7 @@ int main()
     if (roommateCount < 1 || roommateCount > MAX_ROOMMATES)
     {
         printf("Invalid number of roommates.\n");
-        return 0;
+        return 1;
     }
 
     for (int i = 0; i < roommateCount; i++)
